@@ -1,0 +1,8 @@
+<h1>Pet info</h1>
+<h2><%= @pet.name %></h2>
+<p>Breed: <%= @pet.breed %></p>
+<img src=<%= @pet.image %>/>
+<p></p>
+<a href="/pets">Back to all pets</a>
+<a href="/pets/<%= @pet.id %>/edit">Edit pet</a>
+<a href="/pets/<%= @pet.id %>" data-turbo-method="delete">Destroy pet</a>
