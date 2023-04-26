@@ -1,10 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pets/new">New Pet</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <h1>All pets</h1>
 <% @pets.each do |pet| %>
-  <h2><%= pet.name %></h2>
-  <p>Breed: <%= pet.breed %></p>
-  <p>Image: <%= pet.image %></p>
 
-  <a href="/pets/<%= pet.id %>">More info</a>
-  <a href="/pets/new">New Pet</a>
+<div class="card mb-3">
+   <div class="card-body">
+    <h5 class="Pet Name"><%=pet.name %></h5>
+    <p class="Pet Breed"><%=pet.breed %></p>
+    <img src=<%= pet.image %>/>
+    <a href="/pets/<%= pet.id %>">More info</a>
+    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+  </div>
+</div>
+  
 
 <% end %>

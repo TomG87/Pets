@@ -19,7 +19,9 @@ class PetsController < ApplicationController
       name: params[:pet][:name],
       breed: params[:pet][:breed],
       image: params[:pet][:image],
+      user_id: current_user.id
     )
+    @pet.save
     redirect_to "/pets"
   end
 
